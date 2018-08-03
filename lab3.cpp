@@ -15,7 +15,8 @@ int main(){
  	while(menu!=0 && menu<4){
 		switch(menu){
 			case 1:
-				int* terminos = new int[3];
+				int* terminos;
+				terminos = new int[3];
 				cout<<"Ingrese el termino del primer polinomio x^2"<<endl;
 				cin>>terminos[0];
 				cout<<"Ingrese el segundo termino (x)"<<endl;
@@ -24,8 +25,10 @@ int main(){
 				cin>>terminos[2];
 				cout<<"Ecuacion ingresada es: "<<terminos[0]<<"x^2 + "<<terminos[1]<<"x + "<<terminos[2]<<endl;
 				cout<<"Ecuacion factorizada: " ;
-				double term1 =-(-terminos[1]+sqrt(terminos[1]*terminos[1]-4*terminos[0]*terminos[2]))/(2*terminos[0]);
-				double term2 =-(-terminos[1]-sqrt(terminos[1]*terminos[1]-4*terminos[0]*terminos[2]))/(2*terminos[0]);
+				double term1;
+				term1 =-(-terminos[1]+sqrt(terminos[1]*terminos[1]-4*terminos[0]*terminos[2]))/(2*terminos[0]);
+				double term2;
+				term2 =-(-terminos[1]-sqrt(terminos[1]*terminos[1]-4*terminos[0]*terminos[2]))/(2*terminos[0]);
 				if(term1>0 && term2>0){
 					cout<<"("<<terminos[0]<<"x +"<<term1<<")("<<"x + "<<term2<<")"<<endl;
 				}
@@ -37,8 +40,57 @@ int main(){
 			break;
 
 			case 2:
-				
+				double angulo;
+				double seno;
+				double coseno;
+				coseno=0;
+				seno=0;
+				cout<<"Ingrese el angulo"<<endl;
+				cin>>angulo;
+				angulo= (angulo*M_PI)/180;
+				for (int n = 0 ; n <= 150 ; n++){
+					double respuesta;
+					respuesta = pow(-1,n);
+					double temporal = 2*n+1;
+					long double factorial;
+					factorial=1;
+					for(int k = 1 ; k <= temporal ; k++){
+						factorial = k*factorial;
+					}
+					if(factorial == 0){
+						factorial = 1;
+					}
+					respuesta = pow(-1,n) / factorial * pow(angulo , 2*n+1);
+					
+					seno = seno+respuesta;
+					respuesta = 0;
+					factorial = 1;
+					temporal  = 1;
+
+				}//fin for seno;
+				for (int n  = 0 ; n <= 150 ; n++){
+					 double respuesta;
+					 double temporal;
+					long double factorial;
+				       	temporal = 2*n;
+					factorial = 1;
+					for (int k = 1 ; k <= temporal ; k++){
+						factorial = factorial *k;
+					}
+					if(factorial == 0){
+						factorial = 1;
+					}
+					respuesta = pow(-1,n)/factorial * pow(angulo,2*n);
+					coseno = coseno + respuesta;
+					respuesta = 0;
+					factorial = 1;
+					temporal = 1;
+				}//fin for coseno				
+				angulo =(angulo*180)/M_PI;
+				cout<<"El SENO del angulo "<<angulo<<" es "<<seno<<endl;
+				cout<<"El COSENO del angulo "<<angulo<<" es "<<coseno<<endl;
 			break;
+			
 			       
 	      		 
 		}//fin swtich 
