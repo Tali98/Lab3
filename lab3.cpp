@@ -104,7 +104,7 @@ int main(){
 				set = 0;
 				for(int a = 1 ; a<=rep ; a++){
 					cout<<setw(rep-set+1);
-					for(int b = 0 ; b<=a ; b++){
+					for(int b = 0 ; b<a ; b++){
 					cout<<"0 ";
 				}
 					cout<<endl;
