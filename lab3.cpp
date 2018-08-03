@@ -102,11 +102,38 @@ int main(){
 				cin>>rep;
 				int set;
 				set = 0;
+				cout<<setw(rep+1);
+				cout<<"i"<<endl;
 				for(int a = 1 ; a<=rep ; a++){
 					cout<<setw(rep-set+1);
 					for(int b = 0 ; b<a ; b++){
-					cout<<"0 ";
+					int fact_a;
+					fact_a=1;	
+					for(int c = 1 ; c<=a; c++){
+						fact_a = fact_a*c; 
+					}
+					int fact_b;
+					fact_b=1;
+					for(int c =1 ; c<=b;c++){
+						fact_b = fact_b*c;
+					}
+					int fact_ambos;
+					fact_ambos = a-b;
+					int factorial;
+					factorial = 1;
+					for (int c = 1; c<=fact_ambos;c++){
+						factorial = factorial*c;
+					}
+					int respuesta;
+					respuesta = fact_a/(fact_b*factorial);
+					if(respuesta%2==0){
+						cout<<"p ";	
+					}else{
+						cout<<"i ";
+					}
+					
 				}
+					cout<<"i ";
 					cout<<endl;
 					set++;
 			}
