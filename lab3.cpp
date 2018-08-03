@@ -90,7 +90,27 @@ int main(){
 				cout<<"El SENO del angulo "<<angulo<<" es "<<seno<<endl;
 				cout<<"El COSENO del angulo "<<angulo<<" es "<<coseno<<endl;
 			break;
-			
+			case 3:
+				cout<<"Ingrese cuantas repeticiones desea"<<endl;
+				int rep;
+				int num;
+				int col;
+				int num_col;
+				num=2;
+				col=1;
+				num_col=1;
+				cin>>rep;
+				int set;
+				set = 0;
+				for(int a = 1 ; a<=rep ; a++){
+					cout<<setw(rep-set+1);
+					for(int b = 0 ; b<=a ; b++){
+					cout<<"0 ";
+				}
+					cout<<endl;
+					set++;
+			}
+			break;
 			       
 	      		 
 		}//fin swtich 
